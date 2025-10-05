@@ -78,5 +78,27 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+// a route to handle fetching About page data
+app.get('/about', async (req, res) => {
+  try {
+    res.json({
+      title: 'About Me',
+      paragraphs: [
+        'Hello! I\'m a senior with love for creating elegant solutions to complex problems. ',
+        'My journey in software development began many years ago, and since then I\'ve been constantly learning and growing.',
+        'I love runing as well, I am in nyu running club, welcome to connect :\)'
+      ],
+      imageUrl: 'https://i.imgur.com/uPYfaD5.jpeg',
+      status: 'all good',
+    })
+  } catch (err) {
+    console.error(err)
+    res.status(400).json({
+      error: err,
+      status: 'failed to retrieve about data',
+    })
+  }
+})
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
