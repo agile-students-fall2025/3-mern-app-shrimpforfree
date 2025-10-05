@@ -42,7 +42,7 @@ const About = props => {
 
   return (
     <>
-      <h1>About Me</h1>
+      <h1>About Us</h1>
 
       {error && <p className="About-error">{error}</p>}
       {!loaded && <img src={loadingIcon} alt="loading" />}
